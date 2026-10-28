@@ -1,0 +1,272 @@
+.dashboard {
+  padding: 31px 34px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 27px;
+}
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.feedback-message {
+  min-height: 0;
+  margin: 0;
+  color: #229b60;
+  font-size: 12px;
+}
+
+.feedback-message:empty {
+  display: none;
+}
+
+.storage-error {
+  margin: 0 0 14px;
+  color: #c83d47;
+  font-size: 12px;
+}
+
+.page-heading h1 {
+  font-size: 24px;
+  letter-spacing: -0.8px;
+  margin: 0 0 9px;
+  font-weight: 700;
+}
+
+.page-heading p,
+.panel-heading p {
+  color: #8a95a6;
+  font-size: 12px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 15px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.primary-button {
+  color: white;
+  background: #4169e1;
+  border: 1px solid #4169e1;
+  box-shadow: 0 3px 8px #4169e126;
+}
+
+.primary-button:hover {
+  background: #3155c7;
+}
+
+.secondary-button {
+  color: #526075;
+  background: white;
+  border: 1px solid #e4e9f1;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.stat-card {
+  padding: 20px 18px 17px;
+  min-width: 0;
+  background: white;
+  border: 1px solid #e9edf3;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #1d293908;
+}
+
+.stat-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-title {
+  font-size: 11px;
+  color: #788498;
+  font-weight: 500;
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 9px;
+  font-size: 18px;
+}
+
+.stat-icon.blue,
+.stat-change.blue {
+  color: #4169e1;
+  background: #edf2ff;
+}
+
+.stat-icon.purple,
+.stat-change.purple {
+  color: #8b5bd6;
+  background: #f3edff;
+}
+
+.stat-icon.orange,
+.stat-change.orange {
+  color: #e89a30;
+  background: #fff5e6;
+}
+
+.stat-icon.red,
+.stat-change.red {
+  color: #e15f66;
+  background: #fff0f0;
+}
+
+.stat-card h2 {
+  font-size: clamp(20px, 2vw, 27px);
+  margin: 18px 0 15px;
+  letter-spacing: -0.8px;
+  overflow-wrap: anywhere;
+}
+
+.stat-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  color: #929bad;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.stat-change {
+  font-weight: 700;
+  padding: 4px 6px;
+  border-radius: 5px;
+}
+
+.dashboard-footer {
+  text-align: center;
+  color: #9aa4b3;
+  font-size: 10px;
+  margin-top: 25px;
+}
+
+.dashboard-footer span {
+  padding: 0 5px;
+}
+
+@media (min-width: 1500px) {
+  .stats-grid {
+    gap: 22px;
+  }
+
+  .dashboard {
+    padding-top: 38px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard {
+    padding: 24px 14px 20px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-heading h1 {
+    font-size: 21px;
+  }
+
+  .stats-grid {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 11px;
+  }
+
+  .stat-title {
+    font-size: 10px;
+  }
+
+  .stat-icon {
+    width: 29px;
+    height: 29px;
+    font-size: 14px;
+  }
+
+  .stat-card h2 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard {
+    padding: 20px 12px 24px;
+  }
+
+  .stats-grid {
+    gap: 9px;
+  }
+
+  .stat-card {
+    padding: 13px 10px;
+  }
+
+  .stat-card h2 {
+    font-size: 18px;
+  }
+}
+
+@media print {
+  .primary-button,
+  .feedback-message,
+  .dashboard-footer {
+    display: none !important;
+  }
+
+  .dashboard {
+    padding: 0;
+    max-width: none;
+  }
+
+  .stat-card {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
